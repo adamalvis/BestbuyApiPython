@@ -1,4 +1,4 @@
-from product_search import ProductSearch
+from products import Products
 
 class BestBuyAPI(object):
 
@@ -8,9 +8,9 @@ class BestBuyAPI(object):
         self.settings = settings
 
 
-    def product_search(self, params):
+    def products(self, params):
 
-        product_search = ProductSearch(self.settings)
-        response = product_search.search(params)
+        products = Products(self.settings)
+        response = products.search(params)
         
         return response['products']

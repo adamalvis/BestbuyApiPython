@@ -5,6 +5,8 @@ def product_search():
         'apiKey': 'rqz7wj87qg4968s5hdaev3sc',
     })
 
-    print bb.product_search({
-              'categoryPath.id': 'abcat0507008', # motherboards category
-          })
+    products = bb.product_search({
+                   'categoryPath.id': 'abcat0507008', # motherboards category
+               })
+
+    return products

@@ -1,6 +1,6 @@
 from route import Route
 
-class ProductSearch(Route):
+class Products(Route):
 
     DEFAULTS = {
         'show': 'sku,name,longDescription',
