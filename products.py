@@ -11,7 +11,7 @@ class Products(Route):
 
     def __init__(self, settings):
 
-        self.settings = ProductSearch.DEFAULTS
+        self.settings = Products.DEFAULTS
         Route.__init__(self, settings)
 
 

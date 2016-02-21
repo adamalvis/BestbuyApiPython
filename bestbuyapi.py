@@ -1,10 +1,9 @@
 from products import Products
+from reviews import Reviews
 
 class BestBuyAPI(object):
 
     def __init__(self, settings):
-
-        # self.key = 'rqz7wj87qg4968s5hdaev3sc'
         self.settings = settings
 
 
@@ -14,3 +13,14 @@ class BestBuyAPI(object):
         response = products.search(params)
         
         return response['products']
+
+
+    def reviews(self, params):
+
+        reviews = Reviews(self.settings)
+        response = reviews.search(params)
+
+        return response['reviews']
+
+
+    
