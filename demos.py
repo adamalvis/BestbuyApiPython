@@ -12,6 +12,7 @@ def product_search():
 
     return products
 
+
 def review_search():
 
     bb = BestBuyAPI({
@@ -20,6 +21,19 @@ def review_search():
 
     reviews = bb.reviews({
             'sku': '7008759'
+        })
+
+    return reviews
+
+
+def store_search():
+
+    bb = BestBuyAPI({
+        'apiKey': 'rqz7wj87qg4968s5hdaev3sc',
+    })
+
+    reviews = bb.stores({
+            'postalCode': '33510'
         })
 
     return reviews

@@ -1,5 +1,6 @@
 from products import Products
 from reviews import Reviews
+from stores import Stores
 
 class BestBuyAPI(object):
 
@@ -23,4 +24,11 @@ class BestBuyAPI(object):
         return response['reviews']
 
 
-    
+    def stores(self, params):
+
+        stores = Stores(self.settings)
+        response = stores.search(params)
+
+        return response['stores']
+
+
