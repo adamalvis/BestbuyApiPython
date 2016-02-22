@@ -1,6 +1,7 @@
-from products import Products
-from reviews import Reviews
-from stores import Stores
+from routes.products import Products
+from routes.reviews import Reviews
+from routes.stores import Stores
+from routes.categories import Categories
 
 class BestBuyAPI(object):
 
@@ -13,7 +14,7 @@ class BestBuyAPI(object):
         products = Products(self.settings)
         response = products.search(params)
         
-        return response['products']
+        return response
 
 
     def reviews(self, params):
@@ -21,7 +22,7 @@ class BestBuyAPI(object):
         reviews = Reviews(self.settings)
         response = reviews.search(params)
 
-        return response['reviews']
+        return response
 
 
     def stores(self, params):
@@ -29,6 +30,12 @@ class BestBuyAPI(object):
         stores = Stores(self.settings)
         response = stores.search(params)
 
-        return response['stores']
+        return response
 
 
+    def categories(self, params):
+
+        categories = Categories(self.settings)
+        response = categories.search(params)
+
+        return response

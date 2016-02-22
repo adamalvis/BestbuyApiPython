@@ -23,12 +23,23 @@ class Route(object):
     def format_params(self, params):
 
         formatted_params = ''
+        count = 1
 
         if type(params) is dict:
+
             for key,val in params.iteritems():
+
                 formatted_params += '{param}={param_val}'.format(param=key, param_val=val)
+
+                if count < len(params):
+                    formatted_params += '&'
+
+                count += 1
+
             return formatted_params
+
         else:
+
             raise Exception('params must be in a dictionary')
 
 
